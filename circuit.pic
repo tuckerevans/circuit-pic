@@ -1,0 +1,21 @@
+.\" Circuits components
+.PS
+lineht = 0.25
+linewid = 0.25
+define batt {move down .1; line up .2; move down .1
+             move right .05 down .03333;
+	     line up .066666; move down 0.03333;
+	     move left .025 down .2; "$1"
+	     move up .2 right 0.025;}
+define cap {move down .05; line up .1; move down .05
+            move right .05 down .05;
+	    line up .1; move down .05; move left .025 down .15; "$1";
+	    move up .15 right 0.025;}
+define point {circle radius .0175 fill 1 at last line .end
+              "$1" above at last circle .n
+	      "  $2" ljust at last circle .w
+	      "$3" below at last circle .s
+	      "$4  " rjust at last circle .e
+	      move to last circle}
+
+.PE
