@@ -8,7 +8,11 @@
 
 text_up = 0.175
 text_down = 0.2
+padding = 0.04
 wire_wid = .25
+
+define begin {line right padding}
+define end_ {line right padding}
 
 define wire {line $1 wire_wid}
 
@@ -36,3 +40,19 @@ define point {
     "$4  " rjust at last circle .e
     move to last circle
 }
+
+define batt {
+#LEFT
+begin
+    move down .1; line up .2; move down .1
+    move right .025
+#TEXT
+    move down text_down "$1"; move up text_down;
+    move up text_up "$2"; move down text_up;
+#RIGHT
+    move right .025
+    move down .03333;
+    line up .066666; move down 0.03333 ;
+end_
+}
+batt_len = .05 + padding*2
