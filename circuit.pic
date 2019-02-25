@@ -93,3 +93,58 @@ begin
 end_
 }
 res_len = (0.03 * 7) + padding *2
+
+
+#Reverse sections
+define Rbegin {line left padding}
+define Rend {line left padding}
+
+define Rbatt {
+#LEFT
+Rbegin
+    move down .1; line up .2; move down .1
+    move left .025
+#TEXT
+    move down text_down "$1"; move up text_down;
+    move up text_up "$2"; move down text_up;
+#RIGHT
+    move left .025
+    move down .03333;
+    line up .066666; move down 0.03333 ;
+Rend
+}
+
+define Rcap {
+Rbegin
+#LEFT
+    move down .05; line up .1; move down .05;
+    move left .025
+#TEXT
+    move down text_down "$1"; move up text_down;
+    move up text_up "$2"; move down text_up;
+#RIGHT
+    move left .025 down .05;
+    line up .1; move down .05;
+Rend
+}
+
+define Rres {
+Rbegin
+#LEFT
+    line down .05 left .03
+    line up .1 left .03
+
+    line down .1 left .03
+    line up .05 left .015
+#TEXT
+    move down text_down "$1"; move up text_down
+    move up text_up "$2"; move down text_up
+#RIGHT
+    line up .05 left .015
+
+    line down .1 left .03
+    line up .1 left .03
+
+    line down .05 left .03
+Rend
+}
