@@ -71,3 +71,25 @@ begin
 end_
 }
 cap_len = .05 + padding *2
+
+define res {
+begin
+#LEFT
+    line up .05 right .03
+    line down .1 right .03
+
+    line up .1 right .03
+    line down .05 right .015
+#TEXT
+    move down text_down "$1"; move up text_down
+    move up text_up "$2"; move down text_up
+#RIGHT
+    line down .05 right .015
+
+    line up .1 right .03
+    line down .1 right .03
+
+    line up .05 right .03
+end_
+}
+res_len = (0.03 * 7) + padding *2
