@@ -56,3 +56,18 @@ begin
 end_
 }
 batt_len = .05 + padding*2
+
+define cap {
+begin
+#LEFT
+    move down .05; line up .1; move down .05;
+    move right .025
+#TEXT
+    move down text_down "$1"; move up text_down;
+    move up text_up "$2"; move down text_up;
+#RIGHT
+    move right .025 down .05;
+    line up .1; move down .05;
+end_
+}
+cap_len = .05 + padding *2
